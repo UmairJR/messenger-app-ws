@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
 
 const Header = () => {
-  const [time, setTime] = useState(new Date().toLocaleString());
+  const [time, setTime] = useState(new Date().toLocaleTimeString("en-US", {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  }));
 
   useEffect(() => {
     const interval = setInterval(() => {
